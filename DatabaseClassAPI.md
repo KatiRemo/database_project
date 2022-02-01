@@ -59,9 +59,11 @@ Return value of select with employeeId=1 for example:
 ##### Insert
 ```js
 const result = await db.doQuery('insert into employee values(?,?,?,?,?)', 
-[6,'Sheldon','Cooper','DR',8000]);
+[6,'Sheldon','Cooper','Physics',8000]);
 ```
-Return value is an object:
+Sends to the MariaDB engine: `insert into employee values (6, 'Sheldon', 'Cooper', 'Physics', 8000)`
+
+Returns a promise. Return value is an object:
 ```js
 {
     queryResult:{rowsChanged:1, insertId:0, status:0},
